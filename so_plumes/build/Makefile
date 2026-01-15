@@ -1,7 +1,7 @@
 # Multithreaded + multi-processing makefile for:
 #    Linux albedo0 4.18.0-372.13.1.el8_6.x86_64 #1 SMP Wed Jun 29 17:21:09 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 # This makefile was generated automatically on
-#    Wed Mar 12 17:37:37 CET 2025
+#    Mon Dec  8 16:14:31 CET 2025
 # by the command:
 #    ../../tools/genmake2 -mods ../code -mpi -optfile ../../tools/build_options/linux_amd64_ifort_albedo
 # executed by:
@@ -27,8 +27,8 @@
 
 ROOTDIR     = ../..
 BUILDDIR    = .
-SOURCEDIRS  =  ../code $(ROOTDIR)/pkg/debug $(ROOTDIR)/pkg/diagnostics $(ROOTDIR)/pkg/generic_advdiff $(ROOTDIR)/pkg/mdsio $(ROOTDIR)/pkg/mom_common $(ROOTDIR)/pkg/mom_fluxform $(ROOTDIR)/pkg/mom_vecinv $(ROOTDIR)/pkg/monitor $(ROOTDIR)/pkg/rbcs $(ROOTDIR)/pkg/rw $(ROOTDIR)/eesupp/src $(ROOTDIR)/model/src
-INCLUDEDIRS =  /albedo/soft/sw/spack-sw/intel-oneapi-mpi/2021.6.0-ypwmdz5/mpi/latest/lib/pkgconfig/../../include/ ../code $(ROOTDIR)/pkg/debug $(ROOTDIR)/pkg/diagnostics $(ROOTDIR)/pkg/generic_advdiff $(ROOTDIR)/pkg/mdsio $(ROOTDIR)/pkg/mom_common $(ROOTDIR)/pkg/mom_fluxform $(ROOTDIR)/pkg/mom_vecinv $(ROOTDIR)/pkg/monitor $(ROOTDIR)/pkg/rbcs $(ROOTDIR)/pkg/rw $(ROOTDIR)/eesupp/inc $(ROOTDIR)/model/inc
+SOURCEDIRS  =  ../code $(ROOTDIR)/pkg/debug $(ROOTDIR)/pkg/diagnostics $(ROOTDIR)/pkg/generic_advdiff $(ROOTDIR)/pkg/mdsio $(ROOTDIR)/pkg/mom_common $(ROOTDIR)/pkg/mom_fluxform $(ROOTDIR)/pkg/mom_vecinv $(ROOTDIR)/pkg/monitor $(ROOTDIR)/pkg/rw $(ROOTDIR)/eesupp/src $(ROOTDIR)/model/src
+INCLUDEDIRS =  /albedo/soft/sw/spack-sw/intel-oneapi-mpi/2021.6.0-ypwmdz5/mpi/latest/lib/pkgconfig/../../include/ ../code $(ROOTDIR)/pkg/debug $(ROOTDIR)/pkg/diagnostics $(ROOTDIR)/pkg/generic_advdiff $(ROOTDIR)/pkg/mdsio $(ROOTDIR)/pkg/mom_common $(ROOTDIR)/pkg/mom_fluxform $(ROOTDIR)/pkg/mom_vecinv $(ROOTDIR)/pkg/monitor $(ROOTDIR)/pkg/rw $(ROOTDIR)/eesupp/inc $(ROOTDIR)/model/inc
 EXEDIR      = .
 EXECUTABLE  = $(EXEDIR)/mitgcmuv
 TOOLSDIR    = $(ROOTDIR)/tools
@@ -40,8 +40,8 @@ EXE_ADJ     = mitgcmuv_ad
 EXE_TLM     = mitgcmuv_ftl
 EXE_SVD     = mitgcmuv_svd
 
-ENABLED_PACKAGES =  -DALLOW_DEBUG -DALLOW_DIAGNOSTICS -DALLOW_GENERIC_ADVDIFF -DALLOW_MDSIO -DALLOW_MOM_COMMON -DALLOW_MOM_FLUXFORM -DALLOW_MOM_VECINV -DALLOW_MONITOR -DALLOW_RBCS -DALLOW_RW
-DISABLED_PACKAGES =  -UALLOW_ADMTLM -UALLOW_AIM_V23 -UALLOW_ATM2D -UALLOW_ATM_COMMON -UALLOW_ATM_COMPON_INTERF -UALLOW_ATM_OCN_COUPLER -UALLOW_ATM_PHYS -UALLOW_AUTODIFF -UALLOW_BBL -UALLOW_BLING -UALLOW_BULK_FORCE -UALLOW_CAL -UALLOW_CD_CODE -UALLOW_CFC -UALLOW_CHEAPAML -UALLOW_CHRONOS -UALLOW_COMPON_COMMUNIC -UALLOW_COST -UALLOW_CTRL -UALLOW_DIC -UALLOW_DOWN_SLOPE -UALLOW_EBM -UALLOW_ECCO -UALLOW_EMBED_FILES -UALLOW_EXCH2 -UALLOW_EXF -UALLOW_FIZHI -UALLOW_FLT -UALLOW_FRAZIL -UALLOW_GCHEM -UALLOW_GGL90 -UALLOW_GMREDI -UALLOW_GRDCHK -UALLOW_GRIDALT -UALLOW_ICEFRONT -UALLOW_KL10 -UALLOW_KPP -UALLOW_LAND -UALLOW_LAYERS -UALLOW_LONGSTEP -UALLOW_MATRIX -UALLOW_MNC -UALLOW_MY82 -UALLOW_MYPACKAGE -UALLOW_OBCS -UALLOW_OCN_COMPON_INTERF -UALLOW_OFFLINE -UALLOW_OPENAD -UALLOW_OPPS -UALLOW_PP81 -UALLOW_PROFILES -UALLOW_PTRACERS -UALLOW_REGRID -UALLOW_RUNCLOCK -UALLOW_SALT_PLUME -UALLOW_SBO -UALLOW_SEAICE -UALLOW_SHAP_FILT -UALLOW_SHELFICE -UALLOW_SHOWFLOPS -UALLOW_SMOOTH -UALLOW_SPHERE -UALLOW_STEEP_ICECAVITY -UALLOW_STREAMICE -UALLOW_TAPENADE -UALLOW_THSICE -UALLOW_TIMEAVE -UALLOW_ZONAL_FILT
+ENABLED_PACKAGES =  -DALLOW_DEBUG -DALLOW_DIAGNOSTICS -DALLOW_GENERIC_ADVDIFF -DALLOW_MDSIO -DALLOW_MOM_COMMON -DALLOW_MOM_FLUXFORM -DALLOW_MOM_VECINV -DALLOW_MONITOR -DALLOW_RW
+DISABLED_PACKAGES =  -UALLOW_ADMTLM -UALLOW_AIM_V23 -UALLOW_ATM2D -UALLOW_ATM_COMMON -UALLOW_ATM_COMPON_INTERF -UALLOW_ATM_OCN_COUPLER -UALLOW_ATM_PHYS -UALLOW_AUTODIFF -UALLOW_BBL -UALLOW_BLING -UALLOW_BULK_FORCE -UALLOW_CAL -UALLOW_CD_CODE -UALLOW_CFC -UALLOW_CHEAPAML -UALLOW_CHRONOS -UALLOW_COMPON_COMMUNIC -UALLOW_COST -UALLOW_CTRL -UALLOW_DIC -UALLOW_DOWN_SLOPE -UALLOW_EBM -UALLOW_ECCO -UALLOW_EMBED_FILES -UALLOW_EXCH2 -UALLOW_EXF -UALLOW_FIZHI -UALLOW_FLT -UALLOW_FRAZIL -UALLOW_GCHEM -UALLOW_GGL90 -UALLOW_GMREDI -UALLOW_GRDCHK -UALLOW_GRIDALT -UALLOW_ICEFRONT -UALLOW_KL10 -UALLOW_KPP -UALLOW_LAND -UALLOW_LAYERS -UALLOW_LONGSTEP -UALLOW_MATRIX -UALLOW_MNC -UALLOW_MY82 -UALLOW_MYPACKAGE -UALLOW_OBCS -UALLOW_OCN_COMPON_INTERF -UALLOW_OFFLINE -UALLOW_OPENAD -UALLOW_OPPS -UALLOW_PP81 -UALLOW_PROFILES -UALLOW_PTRACERS -UALLOW_RBCS -UALLOW_REGRID -UALLOW_RUNCLOCK -UALLOW_SALT_PLUME -UALLOW_SBO -UALLOW_SEAICE -UALLOW_SHAP_FILT -UALLOW_SHELFICE -UALLOW_SHOWFLOPS -UALLOW_SMOOTH -UALLOW_SPHERE -UALLOW_STEEP_ICECAVITY -UALLOW_STREAMICE -UALLOW_TAPENADE -UALLOW_THSICE -UALLOW_TIMEAVE -UALLOW_ZONAL_FILT
 
 # These files are created by Makefile
 SPECIAL_FILES = PACKAGES_CONFIG.h AD_CONFIG.h FC_NAMEMANGLE.h BUILD_INFO.h
@@ -90,6 +90,8 @@ MAKEFILE = Makefile
 MAKE = make
 
 F77_SRC_FILES =  \
+ freeze_surface.F \
+ ini_theta.F \
  chksum_tiled.F \
  debug_call.F \
  debug_cs_corner_uv.F \
@@ -373,11 +375,6 @@ F77_SRC_FILES =  \
  mon_vort3.F \
  mon_writestats_rl.F \
  mon_writestats_rs.F \
- rbcs_add_tendency.F \
- rbcs_fields_load.F \
- rbcs_init_fixed.F \
- rbcs_init_varia.F \
- rbcs_readparms.F \
  get_write_global_fld.F \
  read_fld_xy_rl.F \
  read_fld_xy_rs.F \
@@ -623,7 +620,6 @@ F77_SRC_FILES =  \
  forcing_surf_relax.F \
  forward_step.F \
  freesurf_rescale_g.F \
- freeze_surface.F \
  grad_sigma.F \
  gsw_teos10.F \
  impldiff.F \
@@ -657,7 +653,6 @@ F77_SRC_FILES =  \
  ini_salt.F \
  ini_sigma_hfac.F \
  ini_spherical_polar_grid.F \
- ini_theta.F \
  initialise_fixed.F \
  initialise_varia.F \
  ini_vel.F \
@@ -899,8 +894,6 @@ NON_AD_F77_SRC_FILES =  \
  mon_vort3.F \
  mon_writestats_rl.F \
  mon_writestats_rs.F \
- rbcs_init_fixed.F \
- rbcs_readparms.F \
  get_write_global_fld.F \
  read_glvec_rl.F \
  read_glvec_rs.F \
@@ -1162,14 +1155,6 @@ H_SRC_FILES =  \
  MOM_VECINV_OPTIONS.h \
  MONITOR.h \
  MONITOR_OPTIONS.h \
- rbcs_ad_check_lev1_dir.h \
- rbcs_ad_check_lev2_dir.h \
- rbcs_ad_check_lev3_dir.h \
- rbcs_ad_check_lev4_dir.h \
- RBCS_FIELDS.h \
- RBCS_OPTIONS.h \
- RBCS_PARAMS.h \
- RBCS_SIZE.h \
  RW_MFLDS.h \
  RW_OPTIONS.h \
  mpicxx.h \
@@ -1337,7 +1322,7 @@ BUILD_INFO.h:
 	@echo Creating $@ ...
 	-echo "#define THISVER 'checkpoint69a'" > $@
 	-echo "#define THISUSER 'robrow001'" >> $@
-	-echo "#define THISDATE 'Wed Mar 12 17:37:37 CET 2025'" >> $@
+	-echo "#define THISDATE 'Mon Dec  8 16:14:31 CET 2025'" >> $@
 	-echo "#define THISHOST 'albedo0'" >> $@
 
 # The normal chain of rules is (  .F - .f - .o  )
@@ -1497,9 +1482,6 @@ AD_FILES =  \
  mom_vi_v_coriolis_c4.f \
  mom_vi_v_grad_ke.f \
  mom_vi_v_vertshear.f \
- rbcs_add_tendency.f \
- rbcs_fields_load.f \
- rbcs_init_varia.f \
  read_fld_xyz_rs.f \
  read_fld_xyz_rl.f \
  read_fld_xy_rs.f \
@@ -1745,7 +1727,7 @@ obcs_set_connect.o: obcs_set_connect.f
 
 
 #  These files are linked from ../code ( aka ../code )
- CPP_OPTIONS.h DIAGNOSTICS_SIZE.h MOM_COMMON_OPTIONS.h SIZE.h :
+ CPP_OPTIONS.h DIAGNOSTICS_SIZE.h freeze_surface.F ini_theta.F MOM_COMMON_OPTIONS.h SIZE.h :
 	if [ ! -L $@ ]; then $(LN) ../code/$@ $@; fi
 
 #  These files are linked from $(ROOTDIR)/pkg/debug ( aka ../../pkg/debug )
@@ -1780,10 +1762,6 @@ obcs_set_connect.o: obcs_set_connect.f
  mon_advcfl.F mon_advcflw2.F mon_advcflw.F mon_calc_advcfl.F mon_calc_stats_rl.F mon_calc_stats_rs.F mon_init.F monitor_ad.F monitor.F monitor_g.F MONITOR.h MONITOR_OPTIONS.h mon_ke.F mon_out.F mon_printstats_rl.F mon_printstats_rs.F mon_set_iounit.F mon_set_pref.F mon_solution.F mon_stats_latbnd_rl.F mon_stats_rl.F mon_stats_rs.F mon_surfcor.F mon_vort3.F mon_writestats_rl.F mon_writestats_rs.F monitor_ad.flow :
 	if [ ! -L $@ ]; then $(LN) $(ROOTDIR)/pkg/monitor/$@ $@; fi
 
-#  These files are linked from $(ROOTDIR)/pkg/rbcs ( aka ../../pkg/rbcs )
- rbcs_ad_check_lev1_dir.h rbcs_ad_check_lev2_dir.h rbcs_ad_check_lev3_dir.h rbcs_ad_check_lev4_dir.h rbcs_add_tendency.F RBCS_FIELDS.h rbcs_fields_load.F rbcs_init_fixed.F rbcs_init_varia.F RBCS_OPTIONS.h RBCS_PARAMS.h rbcs_readparms.F RBCS_SIZE.h :
-	if [ ! -L $@ ]; then $(LN) $(ROOTDIR)/pkg/rbcs/$@ $@; fi
-
 #  These files are linked from $(ROOTDIR)/pkg/rw ( aka ../../pkg/rw )
  get_write_global_fld.F read_fld_xy_rl.F read_fld_xy_rs.F read_fld_xyz_rl.F read_fld_xyz_rs.F read_glvec_rl.F read_glvec_rs.F read_mflds.F read_rec.F rw_get_suffix.F RW_MFLDS.h RW_OPTIONS.h set_write_global_fld.F write_fld_3d_rl.F write_fld_3d_rs.F write_fld_s3d_rl.F write_fld_s3d_rs.F write_fld_xy_rl.F write_fld_xy_rs.F write_fld_xyz_rl.F write_fld_xyz_rs.F write_glvec_rl.F write_glvec_rs.F write_local_rl.F write_local_rs.F write_rec.F rw_ad.flow :
 	if [ ! -L $@ ]; then $(LN) $(ROOTDIR)/pkg/rw/$@ $@; fi
@@ -1793,7 +1771,7 @@ obcs_set_connect.o: obcs_set_connect.f
 	if [ ! -L $@ ]; then $(LN) $(ROOTDIR)/eesupp/src/$@ $@; fi
 
 #  These files are linked from $(ROOTDIR)/model/src ( aka ../../model/src )
- adams_bashforth2.F adams_bashforth3.F add_walls2masks.F apply_forcing.F calc_3d_diffusivity.F calc_adv_flow.F calc_div_ghat.F calc_eddy_stress.F calc_grad_phi_fv.F calc_grad_phi_hyd.F calc_grad_phi_surf.F calc_grid_angles.F calc_gw.F calc_ivdc.F calc_oce_mxlayer.F calc_phi_hyd.F calc_r_star.F calc_surf_dr.F calc_viscosity.F calc_wsurf_tr.F cg2d_ex0.F cg2d.F cg2d_nsa.F cg2d_sr.F cg3d_ex0.F cg3d.F check_pickup.F config_check.F config_summary.F convective_adjustment.F convective_adjustment_ini.F convectively_mixtracer.F convective_weights.F correction_step.F cycle_ab_tracer.F cycle_tracer.F diags_oceanic_surf_flux.F diags_phi_hyd.F diags_phi_rlow.F diags_rho.F diags_sound_speed.F do_atmospheric_phys.F do_fields_blocking_exchanges.F do_oceanic_phys.F do_stagger_fields_exchanges.F do_statevars_diags.F do_statevars_tave.F do_the_model_io.F do_write_pickup.F dynamics.F external_fields_load.F external_forcing.F external_forcing_surf.F find_alpha.F find_hyd_press_1d.F find_rho.F forcing_surf_relax.F forward_step.F freesurf_rescale_g.F freeze_surface.F grad_sigma.F gsw_teos10.F impldiff.F ini_cartesian_grid.F ini_cg2d.F ini_cg3d.F ini_cori.F ini_curvilinear_grid.F ini_cylinder_grid.F ini_depths.F ini_dynvars.F ini_eos.F ini_ffields.F ini_fields.F ini_forcing.F ini_global_domain.F ini_grid.F ini_linear_phisurf.F ini_local_grid.F ini_masks_etc.F ini_mixing.F ini_mnc_vars.F ini_model_io.F ini_nh_fields.F ini_nh_vars.F ini_nlfs_vars.F ini_parms.F ini_p_ground.F ini_pressure.F ini_psurf.F ini_salt.F ini_sigma_hfac.F ini_spherical_polar_grid.F ini_theta.F initialise_fixed.F initialise_varia.F ini_vel.F ini_vertical_grid.F integrate_for_w.F integr_continuity.F load_fields_driver.F load_grid_spacing.F load_ref_files.F main_do_loop.F momentum_correction_step.F packages_boot.F packages_check.F packages_error_msg.F packages_init_fixed.F packages_init_variables.F packages_print_msg.F packages_readparms.F packages_unused_msg.F packages_write_pickup.F plot_field.F port_rand.F post_cg3d.F pre_cg3d.F pressure_for_eos.F read_pickup.F remove_mean.F reset_nlfs_vars.F rotate_spherical_polar_grid.F rotate_uv2en.F salt_integrate.F seawater.F set_defaults.F set_grid_factors.F set_parms.F set_ref_state.F solve_for_pressure.F solve_pentadiagonal.F solve_tridiagonal.F solve_uv_tridiago.F state_summary.F swfrac.F taueddy_init_varia.F taueddy_tendency_apply.F temp_integrate.F the_main_loop.F the_model_main.F thermodynamics.F timestep.F timestep_tracer.F timestep_wvel.F tracers_correction_step.F tracers_iigw_correction.F turnoff_model_io.F update_cg2d.F update_etah.F update_etaws.F update_masks_etc.F update_r_star.F update_sigma.F update_surf_dr.F write_grid.F write_pickup.F write_state.F :
+ adams_bashforth2.F adams_bashforth3.F add_walls2masks.F apply_forcing.F calc_3d_diffusivity.F calc_adv_flow.F calc_div_ghat.F calc_eddy_stress.F calc_grad_phi_fv.F calc_grad_phi_hyd.F calc_grad_phi_surf.F calc_grid_angles.F calc_gw.F calc_ivdc.F calc_oce_mxlayer.F calc_phi_hyd.F calc_r_star.F calc_surf_dr.F calc_viscosity.F calc_wsurf_tr.F cg2d_ex0.F cg2d.F cg2d_nsa.F cg2d_sr.F cg3d_ex0.F cg3d.F check_pickup.F config_check.F config_summary.F convective_adjustment.F convective_adjustment_ini.F convectively_mixtracer.F convective_weights.F correction_step.F cycle_ab_tracer.F cycle_tracer.F diags_oceanic_surf_flux.F diags_phi_hyd.F diags_phi_rlow.F diags_rho.F diags_sound_speed.F do_atmospheric_phys.F do_fields_blocking_exchanges.F do_oceanic_phys.F do_stagger_fields_exchanges.F do_statevars_diags.F do_statevars_tave.F do_the_model_io.F do_write_pickup.F dynamics.F external_fields_load.F external_forcing.F external_forcing_surf.F find_alpha.F find_hyd_press_1d.F find_rho.F forcing_surf_relax.F forward_step.F freesurf_rescale_g.F grad_sigma.F gsw_teos10.F impldiff.F ini_cartesian_grid.F ini_cg2d.F ini_cg3d.F ini_cori.F ini_curvilinear_grid.F ini_cylinder_grid.F ini_depths.F ini_dynvars.F ini_eos.F ini_ffields.F ini_fields.F ini_forcing.F ini_global_domain.F ini_grid.F ini_linear_phisurf.F ini_local_grid.F ini_masks_etc.F ini_mixing.F ini_mnc_vars.F ini_model_io.F ini_nh_fields.F ini_nh_vars.F ini_nlfs_vars.F ini_parms.F ini_p_ground.F ini_pressure.F ini_psurf.F ini_salt.F ini_sigma_hfac.F ini_spherical_polar_grid.F initialise_fixed.F initialise_varia.F ini_vel.F ini_vertical_grid.F integrate_for_w.F integr_continuity.F load_fields_driver.F load_grid_spacing.F load_ref_files.F main_do_loop.F momentum_correction_step.F packages_boot.F packages_check.F packages_error_msg.F packages_init_fixed.F packages_init_variables.F packages_print_msg.F packages_readparms.F packages_unused_msg.F packages_write_pickup.F plot_field.F port_rand.F post_cg3d.F pre_cg3d.F pressure_for_eos.F read_pickup.F remove_mean.F reset_nlfs_vars.F rotate_spherical_polar_grid.F rotate_uv2en.F salt_integrate.F seawater.F set_defaults.F set_grid_factors.F set_parms.F set_ref_state.F solve_for_pressure.F solve_pentadiagonal.F solve_tridiagonal.F solve_uv_tridiago.F state_summary.F swfrac.F taueddy_init_varia.F taueddy_tendency_apply.F temp_integrate.F the_main_loop.F the_model_main.F thermodynamics.F timestep.F timestep_tracer.F timestep_wvel.F tracers_correction_step.F tracers_iigw_correction.F turnoff_model_io.F update_cg2d.F update_etah.F update_etaws.F update_masks_etc.F update_r_star.F update_sigma.F update_surf_dr.F write_grid.F write_pickup.F write_state.F :
 	if [ ! -L $@ ]; then $(LN) $(ROOTDIR)/model/src/$@ $@; fi
 
 #  These files are linked from /albedo/soft/sw/spack-sw/intel-oneapi-mpi/2021.6.0-ypwmdz5/mpi/latest/lib/pkgconfig/../../include/ ( aka /albedo/soft/sw/spack-sw/intel-oneapi-mpi/2021.6.0-ypwmdz5/mpi/latest/lib/pkgconfig/../../include/ )
@@ -5570,34 +5548,6 @@ pressure_for_eos.f: TANPHIATU_MACROS.h TANPHIATV_MACROS.h
 pressure_for_eos.f: /usr/include/stdc-predef.h XC_MACROS.h YC_MACROS.h
 print.f: CPP_EEMACROS.h CPP_EEOPTIONS.h EEPARAMS.h EESUPPORT.h mpif.h SIZE.h
 print.f: /usr/include/stdc-predef.h
-rbcs_add_tendency.f: CPP_EEMACROS.h CPP_EEOPTIONS.h CPP_OPTIONS.h DYNVARS.h
-rbcs_add_tendency.f: EEPARAMS.h PACKAGES_CONFIG.h PARAMS.h RBCS_FIELDS.h
-rbcs_add_tendency.f: RBCS_OPTIONS.h RBCS_PARAMS.h RBCS_SIZE.h SIZE.h
-rbcs_add_tendency.f: /usr/include/stdc-predef.h
-rbcs_fields_load.f: CPP_EEMACROS.h CPP_EEOPTIONS.h CPP_OPTIONS.h EEPARAMS.h
-rbcs_fields_load.f: PACKAGES_CONFIG.h PARAMS.h RBCS_FIELDS.h RBCS_OPTIONS.h
-rbcs_fields_load.f: RBCS_PARAMS.h RBCS_SIZE.h SIZE.h
-rbcs_fields_load.f: /usr/include/stdc-predef.h
-rbcs_init_fixed.f: CPP_EEMACROS.h CPP_EEOPTIONS.h CPP_OPTIONS.h DXC_MACROS.h
-rbcs_init_fixed.f: DXF_MACROS.h DXG_MACROS.h DXV_MACROS.h DYC_MACROS.h
-rbcs_init_fixed.f: DYF_MACROS.h DYG_MACROS.h DYU_MACROS.h EEPARAMS.h
-rbcs_init_fixed.f: FCORI_MACROS.h GRID.h GRID_MACROS.h HFACC_MACROS.h
-rbcs_init_fixed.f: HFACS_MACROS.h HFACW_MACROS.h MASKS_MACROS.h MASKW_MACROS.h
-rbcs_init_fixed.f: PACKAGES_CONFIG.h PARAMS.h RA_MACROS.h RAS_MACROS.h
-rbcs_init_fixed.f: RAW_MACROS.h RBCS_FIELDS.h RBCS_OPTIONS.h RBCS_PARAMS.h
-rbcs_init_fixed.f: RBCS_SIZE.h RECIP_DXC_MACROS.h RECIP_DXF_MACROS.h
-rbcs_init_fixed.f: RECIP_DXG_MACROS.h RECIP_DXV_MACROS.h RECIP_DYC_MACROS.h
-rbcs_init_fixed.f: RECIP_DYF_MACROS.h RECIP_DYG_MACROS.h RECIP_DYU_MACROS.h
-rbcs_init_fixed.f: RECIP_HFACC_MACROS.h RECIP_HFACS_MACROS.h
-rbcs_init_fixed.f: RECIP_HFACW_MACROS.h SIZE.h TANPHIATU_MACROS.h
-rbcs_init_fixed.f: TANPHIATV_MACROS.h /usr/include/stdc-predef.h XC_MACROS.h
-rbcs_init_fixed.f: YC_MACROS.h
-rbcs_init_varia.f: CPP_EEMACROS.h CPP_EEOPTIONS.h CPP_OPTIONS.h EEPARAMS.h
-rbcs_init_varia.f: PACKAGES_CONFIG.h PARAMS.h RBCS_FIELDS.h RBCS_OPTIONS.h
-rbcs_init_varia.f: RBCS_SIZE.h SIZE.h /usr/include/stdc-predef.h
-rbcs_readparms.f: CPP_EEMACROS.h CPP_EEOPTIONS.h CPP_OPTIONS.h EEPARAMS.h
-rbcs_readparms.f: PACKAGES_CONFIG.h PARAMS.h RBCS_OPTIONS.h RBCS_PARAMS.h
-rbcs_readparms.f: RBCS_SIZE.h SIZE.h /usr/include/stdc-predef.h
 read_fld_xy_rl.f: CPP_EEMACROS.h CPP_EEOPTIONS.h CPP_OPTIONS.h EEPARAMS.h
 read_fld_xy_rl.f: PACKAGES_CONFIG.h PARAMS.h RW_OPTIONS.h SIZE.h
 read_fld_xy_rl.f: /usr/include/stdc-predef.h

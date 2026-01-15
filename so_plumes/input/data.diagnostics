@@ -16,18 +16,117 @@
 #                (see "available_diagnostics.log" file for the full list of diags)
 #  missing_value(n) : missing value for real-type fields in output file "n"
 #  fileFlags(n)     : specific code (8c string) for output file "n"
-#--------------------
+#-------------------
+#
+#-------------------
+# Note to self
+#-------------------
+# Some nice surface diagnostics options
+#  ETAN    |SM      M1|m               |Surface Height Anomaly
+#  ETANSQ  |SM P    M1|m^2             |Square of Surface Height Anomaly
+#  DETADT2 |SM      M1|m^2/s^2         |Square of Surface Height Anomaly Tendency
+#  TFLUX   |SM      U1|W/m^2           |total heat flux (match heat-content variations), >0 increases theta
+#  SFLUX   |SM      U1|g/m^2/s         |total salt flux (match salt-content variations), >0 increases salt
+#  oceQnet |SM      U1|W/m^2           |net surface heat flux into the ocean (+=down), >0 increases theta
+#  oceSflux|SM      U1|g/m^2/s         |net surface Salt flux into the ocean (+=down), >0 increases salinity
+#  surForcT|SM      U1|W/m^2           |model surface forcing for Temperature, >0 increases theta
+#  surForcS|SM      U1|g/m^2/s         |model surface forcing for Salinity, >0 increases salinity
+#  WVELSLT |WM      LR|g/kg.m/s        |Vertical Transport of Salinity
+#  WVELTH  |WM      LR|degC.m/s        |Vertical Transport of Pot Temp
+#  MXLDEPTH|SM      M1|m               |Mixed-Layer Depth (>0)
+#  DRHODR  |SM      LR|kg/m^4          |Stratification: d.Sigma/dr (kg/m3/r_unit)
+#  ADVr_TH |WM      LR|degC.m^3/s      |Vertical   Advective Flux of Pot.Temperature
+#  DFrE_TH |WM      LR|degC.m^3/s      |Vertical Diffusive Flux of Pot.Temperature (Explicit part)
+#  DFrI_TH |WM      LR|degC.m^3/s      |Vertical Diffusive Flux of Pot.Temperature (Implicit part)
+#  ADVr_SLT|WM      LR|g/kg.m^3/s      |Vertical   Advective Flux of Salinity
+#  DFrE_SLT|WM      LR|g/kg.m^3/s      |Vertical Diffusive Flux of Salinity    (Explicit part)
+#  DFrI_SLT|WM      LR|g/kg.m^3/s      |Vertical Diffusive Flux of Salinity    (Implicit part)
+#  TRELAX  |SM      U1|W/m^2           |surface temperature relaxation, >0 increases theta
+#  SRELAX  |SM      U1|g/m^2/s         |surface salinity relaxation, >0 increases salt
+#  UVEL    |UUR     MR|m/s             |Zonal Component of Velocity (m/s)
+#  VVEL    |VVR     MR|m/s             |Meridional Component of Velocity (m/s)
+#  WVEL    |WM      LR|m/s             |Vertical Component of Velocity (r_units/s)
+#  THETA   |SMR     MR|degC            |Potential Temperature
+#  PHIHYD  |SMR     MR|m^2/s^2         |Hydrostatic Pressure Pot.(p/rho) Anomaly
+#  PHI_NH  |SMR     MR|m^2/s^2         |Non-Hydrostatic Pressure Pot.(p/rho)
+#
+# Complete list of the diffusivity diagnostics
+#  DFrE_TH |WM      LR|degC.m^3/s      |Vertical Diffusive Flux of Pot.Temperature (Explicit part)
+#  DFxE_TH |UU      MR|degC.m^3/s      |Zonal      Diffusive Flux of Pot.Temperature
+#  DFyE_TH |VV      MR|degC.m^3/s      |Meridional Diffusive Flux of Pot.Temperature
+#  DFrI_TH |WM      LR|degC.m^3/s      |Vertical Diffusive Flux of Pot.Temperature (Implicit part)
+#  DFrE_SLT|WM      LR|g/kg.m^3/s      |Vertical Diffusive Flux of Salinity    (Explicit part)
+#  DFxE_SLT|UU      MR|g/kg.m^3/s      |Zonal      Diffusive Flux of Salinity
+#  DFyE_SLT|VV      MR|g/kg.m^3/s      |Meridional Diffusive Flux of Salinity
+#  DFrI_SLT|WM      LR|g/kg.m^3/s      |Vertical Diffusive Flux of Salinity    (Implicit part)
+# 
+# Complete list of the viscosity diagnostics 
+#  VISCAHZ |SZ      MR|m^2/s           |Harmonic Visc Coefficient (m2/s) (Zeta Pt)
+#  VISCA4Z |SZ      MR|m^4/s           |Biharmonic Visc Coefficient (m4/s) (Zeta Pt)
+#  VISCAHD |SM      MR|m^2/s           |Harmonic Viscosity Coefficient (m2/s) (Div Pt)
+#  VISCA4D |SM      MR|m^4/s           |Biharmonic Viscosity Coefficient (m4/s) (Div Pt)
+#  VISCAHW |WM      LR|m^2/s           |Harmonic Viscosity Coefficient (m2/s) (W Pt)
+#  VISCA4W |WM      LR|m^4/s           |Biharmonic Viscosity Coefficient (m4/s) (W Pt)
+#  VAHZMAX |SZ      MR|m^2/s           |CFL-MAX Harm Visc Coefficient (m2/s) (Zeta Pt)
+#  VA4ZMAX |SZ      MR|m^4/s           |CFL-MAX Biharm Visc Coefficient (m4/s) (Zeta Pt)
+#  VAHDMAX |SM      MR|m^2/s           |CFL-MAX Harm Visc Coefficient (m2/s) (Div Pt)
+#  VA4DMAX |SM      MR|m^4/s           |CFL-MAX Biharm Visc Coefficient (m4/s) (Div Pt)
+#  VAHZMIN |SZ      MR|m^2/s           |RE-MIN Harm Visc Coefficient (m2/s) (Zeta Pt)
+#  VA4ZMIN |SZ      MR|m^4/s           |RE-MIN Biharm Visc Coefficient (m4/s) (Zeta Pt)
+#  VAHDMIN |SM      MR|m^2/s           |RE-MIN Harm Visc Coefficient (m2/s) (Div Pt)
+#  VA4DMIN |SM      MR|m^4/s           |RE-MIN Biharm Visc Coefficient (m4/s) (Div Pt)
+#  VAHZLTH |SZ      MR|m^2/s           |Leith Harm Visc Coefficient (m2/s) (Zeta Pt)
+#  VA4ZLTH |SZ      MR|m^4/s           |Leith Biharm Visc Coefficient (m4/s) (Zeta Pt)
+#  VAHDLTH |SM      MR|m^2/s           |Leith Harm Visc Coefficient (m2/s) (Div Pt)
+#  VA4DLTH |SM      MR|m^4/s           |Leith Biharm Visc Coefficient (m4/s) (Div Pt)
+#  VAHZLTHD|SZ      MR|m^2/s           |LeithD Harm Visc Coefficient (m2/s) (Zeta Pt)
+#  VA4ZLTHD|SZ      MR|m^4/s           |LeithD Biharm Visc Coefficient (m4/s) (Zeta Pt)
+#  VAHDLTHD|SM      MR|m^2/s           |LeithD Harm Visc Coefficient (m2/s) (Div Pt)
+#  VA4DLTHD|SM      MR|m^4/s           |LeithD Biharm Visc Coefficient (m4/s) (Div Pt)
+#  VAHZLTHQ|SZ      MR|m^2/s           |LeithQG Harm Visc Coefficient (m2/s) (Zeta Pt)
+#  VAHDLTHQ|SM      MR|m^2/s           |LeithQG Harm Visc Coefficient (m2/s) (Div Pt)
+#  VAHZSMAG|SZ      MR|m^2/s           |Smagorinsky Harm Visc Coefficient (m2/s) (Zeta Pt)
+#  VA4ZSMAG|SZ      MR|m^4/s           |Smagorinsky Biharm Visc Coeff. (m4/s) (Zeta Pt)
+#  VAHDSMAG|SM      MR|m^2/s           |Smagorinsky Harm Visc Coefficient (m2/s) (Div Pt)
+#  VA4DSMAG|SM      MR|m^4/s           |Smagorinsky Biharm Visc Coeff. (m4/s) (Div Pt)
+#  -VISCx_Um|UM      MR|m^4/s^2         |Zonal      Viscous Flux of U momentum
+#  -VISCy_Um|VZ      MR|m^4/s^2         |Meridional Viscous Flux of U momentum
+#  -VISrE_Um|WU      LR|m^4/s^2         |Vertical   Viscous Flux of U momentum (Explicit part)
+#  VISrI_Um|WU      LR|m^4/s^2         |Vertical   Viscous Flux of U momentum (Implicit part)
+#  -VISCx_Vm|UZ      MR|m^4/s^2         |Zonal      Viscous Flux of V momentum
+#  -VISCy_Vm|VM      MR|m^4/s^2         |Meridional Viscous Flux of V momentum
+#  -VISrE_Vm|WV      LR|m^4/s^2         |Vertical   Viscous Flux of V momentum (Explicit part)
+#  VISrI_Vm|WV      LR|m^4/s^2         |Vertical   Viscous Flux of V momentum (Implicit part)
+#  Stretch |SM      MR|s^-1            |Vortex stretching from QG Leith dynamic viscosity
+#
  &DIAGNOSTICS_LIST
 # diag_mnc     = .FALSE.,
 #--
-  fields(1:3,1)  = 'ETAN    ','ETANSQ  ','DETADT2 ',
-   fileName(1) = 'surfDiag',
-  fileFlags(1) = 'D       ',
-  frequency(1) = 1800.,
-  fields(1:6,2)  = 'UVEL    ','VVEL    ','WVEL    ',
+  fields(1:4,1) = 'ETAN    ','TFLUX   ','SFLUX   ','oceTAUX ',
+   fileName(1) =   'surfDiag',
+  fileFlags(1) =   'D       ',
+  frequency(1) =   7200.,
+  fields(1:6,2) =  'UVEL    ','VVEL    ','WVEL    ',
                    'THETA   ','PHIHYD  ','PHI_NH  ',
-   fileName(2) = 'dynDiag',
-  frequency(2) = 1800.,
+   fileName(2) =   'dynDiag',
+  frequency(2) =   7200.,
+  fields(1:3,3) =  'WVELSLT ','WVELTH  ','DRHODR  ',
+   filename(3) =   'fluxDiag',
+  fileFlags(3) =   'D       ',
+  frequency(3) =   7200. ,
+  fields(1:8,4) =  'DFrE_TH ','DFxE_TH ','DFyE_TH ',
+                   'DFrI_TH ','DFrE_SLT','DFxE_SLT',
+                   'DFyE_SLT','DFrI_SLT',
+   filename(4) =   'diffDiag',
+  fileFlags(4) =   'D       ',
+  frequency(4) =   7200.,
+  fields(1:10,5) = 'VISCAHZ','VISCA4Z','VISCAHD',
+                   'VISCA4D','VISCAHW','VISCA4W',
+                   'VAHZSMAG','VA4ZSMAG',
+                   'VAHDSMAG','VA4DSMAG' 
+   filename(5) =   'viscDiag',
+  fileFlags(5) =   'D       ',
+  frequency(5) =   7200.,
  &
 
 #--------------------
@@ -51,7 +150,7 @@
  stat_fields(1:7,1)  = 'ETAN    ','UVEL    ','VVEL    ','WVEL    ',
                        'THETA   ','PHIHYD  ','PHI_NH  ',
   stat_fName(1) = 'dynStDiag',
-   stat_freq(1) = 120.,
-  stat_phase(1) = 60.,
+   stat_freq(1) = 480.,
+  stat_phase(1) = 240.,
  &
 
