@@ -1,0 +1,34 @@
+#!/bin/bash
+#SBATCH --account=nwg_so-clim.nwg_so-clim 	##needs to be set according to what accounts you're allowed to use
+#SBATCH -J MS001			##job name
+#SBATCH --qos=12h			##needs to be set explicitly; controls queuing
+#SBATCH -t 0-12:00			##job time limit
+#SBATCH -o slurm-mem-%j.out		##output file
+#SBATCH -e slurm-mem-%j.err		##error file
+#SBATCH --mail-type=ALL			##email me all types of messages
+#SBATCH --mail-user=marlene.schramm@awi.de	##my email
+#SBATCH --mem=12000mb 			##memory per node	
+###SBATCH --export=NONE 			##export variables from the submission environment to the launched app
+
+##stuff copied directly from Martin via: https://spaces.awi.de/display/MIT/MITgcm+on+Albedo
+##not 100% certain what everything does... might relate to communication between diff nodes (if you're using multiple)
+
+# get and print (ie echo) list of hosts (in nice readable format) that you are running on
+hostlist=$(scontrol show hostnames | tr '\n' ',' | rev | cut -c 2- | rev)
+echo "hosts: $hostlist" 
+
+# make new files created in this job readable for everybody
+umask 022
+
+# load your modules with "module load ..."
+module load intel-oneapi-compilers/
+module load intel-oneapi-mpi/
+#module load netcdf-fortran/4.5.4-oneapi2022.1.0
+
+# maximum possible stacksize (stacksize is a part of the memory that manages function calls, local variables, and control flow; in a recursive heavy program you can run out of stack memory, leading to a stack overflow or segmentation error)
+ulimit -s unlimited
+
+# even though we do not run an OpenMP code it is still a good idea to always set this
+export OMP_NUM_THREADS=1
+
+./mitgcmuv
