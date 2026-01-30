@@ -54,7 +54,7 @@
  implicitFreeSurface=.TRUE.,
 #exactConserv=.TRUE.,
  eosType='TEOS10',
- nonHydrostatic=.FALSE.,
+ nonHydrostatic=.TRUE.,
 #saltStepping=.FALSE.,
  useSingleCpuIO=.TRUE.,
  allowFreezing=.FALSE.,
