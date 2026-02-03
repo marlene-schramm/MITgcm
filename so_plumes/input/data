@@ -57,7 +57,7 @@
  nonHydrostatic=.TRUE.,
 #saltStepping=.FALSE.,
  useSingleCpuIO=.TRUE.,
- allowFreezing=.TRUE.,
+ allowFreezing=.FALSE.,
  &
 
 # Elliptic solver parameters
