@@ -96,11 +96,11 @@
 
 # Input datasets
  &PARM05 
- surfQnetFile = 'Q_surf.bin',
+ surfQnetFile = 'Q_surf_100W_uniform_16x16.bin',
 #saltFluxFile = 'bin_forc_SA_36x66x594_100m_lead_037.bin',
- hydrogThetaFile = 'theta.bin',
- hydrogSaltFile = 'SA.bin',
+ hydrogThetaFile = 'theta_woa23_june_58.5S_5.5N_16x16x25_dz10m.bin',
+ hydrogSaltFile = 'SA_woa23_june_58.5S_5.5N_16x16x25_dz10m.bin',
 #pSurfInitFile = 'bin_init_Eta_66x594.bin',
- uVelInitFile = 'vel.bin',
- vVelInitFile = 'vel.bin',
+ uVelInitFile = 'vel_motionless_16x16x25.bin',
+ vVelInitFile = 'vel_motionless_16x16x25.bin',
  &
