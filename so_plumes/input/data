@@ -31,7 +31,7 @@
 #viscAh=1.E-2,
 #viscAhgrid=0.5,
 #viscC2Smag=3.1,
- viscAz=1.E-3,
+ viscAz=3.E-5,
  viscAh=5.E3,
  no_slip_sides=.FALSE.,
  no_slip_bottom=.FALSE.,
@@ -72,8 +72,8 @@
  &PARM03
  nIter0=0,
 #endTime=129600.,
- nTimeSteps=730,
- deltaT=3600.,
+ nTimeSteps=2920,
+ deltaT=900.,
  abEps=0.1,
 #pChkptFreq=129600.,
 #chkptFreq=129600.,
@@ -89,14 +89,14 @@
  usingCartesianGrid=.TRUE.,
  dXspacing=55000.,
  dYspacing=55000.,
- delZ=10,  10,  10,  10,  10,  10,  10,  10,  10,  10,
+ delZ=1,  2,  2,  3,  5,  10,  10,  10,  10,  10,
       10,  10,  10,  10,  10,  10,  10,  10,  10,  10,
       10,  10,  10,  10,  10,
  &
 
 # Input datasets
  &PARM05 
- surfQnetFile = 'Q_surf_Ygradient0-200W_16x16.bin',
+ surfQnetFile = 'Q_surf_centercol50W_rest0W_16x16.bin',
 #saltFluxFile = 'bin_forc_SA_36x66x594_100m_lead_037.bin',
  hydrogThetaFile = 'theta_woa23_june_58.5S_5.5N_16x16x25_dz10m.bin',
  hydrogSaltFile = 'SA_woa23_june_58.5S_5.5N_16x16x25_dz10m.bin',
