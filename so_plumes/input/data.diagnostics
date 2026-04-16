@@ -102,7 +102,7 @@
  &DIAGNOSTICS_LIST
 # diag_mnc     = .FALSE.,
 #--
-  fields(1:4,1) = 'ETAN    ','TFLUX   ','SFLUX   ','oceTAUX ',
+  fields(1:6,1) = 'ETAN    ','TFLUX   ','oceQnet', 'surForcT','SFLUX   ','oceTAUX ',
    fileName(1) =   'surfDiag',
   fileFlags(1) =   'D       ',
   frequency(1) =   7200.,
