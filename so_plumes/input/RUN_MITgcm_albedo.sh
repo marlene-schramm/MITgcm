@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --account=nwg_so-clim.nwg_so-clim
-#SBATCH -J mrb_110
+#SBATCH -J MSL004
 #SBATCH --qos=48h
 #SBATCH -t 0-48:00 
 #SBATCH -n 9
 #SBATCH -o slurm-mem-%j.out 
 #SBATCH -e slurm-mem-%j.err 
 #SBATCH --mail-type=ALL 
-#SBATCH --mail-user=rowan.brown@awi.de 
+#SBATCH --mail-user=marlene.schramm@awi.de 
 #SBATCH --mem=10000mb
 
 #stuff copied directly from Martin via: https://spaces.awi.de/display/MIT/MITgcm+on+Albedo
@@ -30,7 +30,7 @@ ulimit -s unlimited
 export OMP_NUM_THREADS=1
 
 # Sometimes it may be important to bind MPI processes (ranks) to individual cores on the node
-srun --cpu_bind=cores /albedo/home/robrow001/MITgcm/so_plumes/mrb_110/mitgcmuv
+srun --cpu_bind=cores /albedo/home/maschr005/MITgcm/so_plumes/MSL001/mitgcmuv
 
 ###module load slurm_setup
 ###module load python/3.8.11-base

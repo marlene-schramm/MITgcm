@@ -128,7 +128,7 @@ C--   Apply mask and test consistency
 
 C--   Check that there are no values of temperature below freezing point.
       IF ( checkIniTemp .AND. allowFreezing ) THEN
-       Tfreezing=-1.9 _d 0
+       Tfreezing=-1.95 _d 0
        DO bj = myByLo(myThid), myByHi(myThid)
         DO bi = myBxLo(myThid), myBxHi(myThid)
          DO k=1,Nr
