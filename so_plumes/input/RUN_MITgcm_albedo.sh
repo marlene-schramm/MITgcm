@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=nwg_so-clim.nwg_so-clim
-#SBATCH -J MSL004
+#SBATCH -J MSL005
 #SBATCH --qos=48h
 #SBATCH -t 0-48:00 
 #SBATCH -n 9
@@ -30,7 +30,7 @@ ulimit -s unlimited
 export OMP_NUM_THREADS=1
 
 # Sometimes it may be important to bind MPI processes (ranks) to individual cores on the node
-srun --cpu_bind=cores /albedo/home/maschr005/MITgcm/so_plumes/MSL001/mitgcmuv
+srun --cpu_bind=cores /albedo/home/maschr005/MITgcm/so_plumes/MSL005/mitgcmuv
 
 ###module load slurm_setup
 ###module load python/3.8.11-base
