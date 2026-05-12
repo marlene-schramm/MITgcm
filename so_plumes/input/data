@@ -104,7 +104,7 @@
 
 # Input datasets
  &PARM05 
- surfQnetFile = 'bin_forc_Q_36x66x594_100m_lead_1000W.bin',
+ surfQnetFile = 'bin_forc_Q_36x66x594_100m_lead_500W.bin',
  saltFluxFile = 'bin_forc_SA_36x66x594_100m_lead_037.bin',
  hydrogThetaFile = 'bin_init_pt_66x594x99_variable.bin',
  hydrogSaltFile = 'bin_init_SA_66x594x99_variable.bin',
