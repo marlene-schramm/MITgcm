@@ -45,7 +45,7 @@ CEOP
         k = 1
       ENDIF
 
-      Tfreezing = -1.95 _d 0
+      Tfreezing = -2.0 _d 0
 
 C     Check for water that should have frozen
       DO bj=myByLo(myThid),myByHi(myThid)
