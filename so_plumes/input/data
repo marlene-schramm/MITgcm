@@ -80,7 +80,6 @@
  dumpFreq=3600.,
  monitorFreq=3600.,
  monitorSelect=1,
- monitorFreq=1.,
  periodicExternalForcing=.TRUE.,
  externForcingPeriod=3600.,
  externForcingCycle=129600.,
