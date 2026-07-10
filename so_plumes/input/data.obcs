@@ -10,8 +10,8 @@
 # allow prescribed boundaries from files
  useOBCSprescribe = .TRUE.,
 # specify boundary files (north/south and temperature/salinity)
- OBNtFile = 'boundary_pt_noSC_MEOP_2008-07-16_08:00_Nx50_Nz50_Nt36.bin',
- OBStFile = 'boundary_pt_noSC_MEOP_2008-07-16_08:00_Nx50_Nz50_Nt36.bin',
+ OBNtFile = 'boundary_pt_noSC_MEOP_2008-07-16_08:00_Nx50_Nz50_Nt72.bin',
+ OBStFile = 'boundary_pt_noSC_MEOP_2008-07-16_08:00_Nx50_Nz50_Nt72.bin',
  OBNsFile = 'boundary_SA_MEOP_2008-07-16_08:00_Nx50_Nz50_Nt36.bin',
  OBSsFile = 'boundary_SA_MEOP_2008-07-16_08:00_Nx50_Nz50_Nt36.bin',
 
