@@ -1,0 +1,4 @@
+# KPP Parameter
+ &KPP_PARM01
+ KPPmixingMaps   = .FALSE.,
+ &
