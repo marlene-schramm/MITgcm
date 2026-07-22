@@ -111,5 +111,5 @@
  pSurfInitFile = 'init_Eta0_Nx50_Ny100.bin',
  uVelInitFile = 'init_U0_Nx50_Ny100_Nz50.bin',
  vVelInitFile = 'init_V0_Nx50_Ny100_Nz50.bin',
- zonalWindFile = 'bin_forc_wind_zonal_Nx50_Ny100_t48_sharp-ice-edge_0.19Pa-const.bin'
+# zonalWindFile = 'bin_forc_wind_zonal_Nx50_Ny100_t48_sharp-ice-edge_0.19Pa-const.bin'
  &
