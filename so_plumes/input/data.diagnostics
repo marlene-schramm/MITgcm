@@ -102,7 +102,7 @@
  &DIAGNOSTICS_LIST
 # diag_mnc     = .FALSE.,
 #--
-  fields(1:6,1) = 'ETAN    ','TFLUX   ','oceQnet', 'surForcT','SFLUX   ','oceTAUX ',
+  fields(1:7,1) = 'ETAN    ','TFLUX   ','oceQnet', 'surForcT','surForcS','SFLUX   ','oceTAUX ',
    fileName(1) =   'surfDiag',
   fileFlags(1) =   'D       ',
   frequency(1) =   3600.,
@@ -127,6 +127,10 @@
    filename(5) =   'viscDiag',
   fileFlags(5) =   'D       ',
   frequency(5) =   3600.,
+  fields(1,6) = 'MXLDEPTH'
+   filename(6) =   'mldDiag',
+  fileFlags(6) =   'D       ',
+  frequency(6) =   3600.,
  &
 
 #--------------------
